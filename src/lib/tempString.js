@@ -27,11 +27,11 @@ const objTemp = {
               <div id = "passwordErrorLog" class = "errors background-principal"></div>
               <button type = "button" id = "btnLogIn"  class="type login border width padding box-shadow">  Iniciar Sesión</button>
               <h4 class="center">------------------ ó ------------------</h4>
-              <button  id="button-facebook" class="type facebook border width padding box-shadow"><img class = "icon left background-principal" src = "img/iconofacebook.png"></img>Continuar con Facebook </button>
-              <h6 style="text-align: center;"> </h6>
-              <button type = "button" id="button-google" class = "type google border width padding box-shadow"><img class = "icon left background-principal" src = "img/iconogoogle.png"></img>Continuar con Google </button>
+              <button  id="button-facebook" class="type facebook border width padding box-shadow"><img class = "icon left background-principal" src = "img/iconofacebook.png" alt="logo facebook">Continuar con Facebook </button>
+              <div class = "errors background-principal"></div>  
+              <button type = "button" id="button-google" class = "type google border width padding box-shadow"><img class = "icon left background-principal" src = "img/iconogoogle.png" alt="logo google">Continuar con Google </button>
               <h4 class="center">Si no tienes una cuenta, puedes crearla dando clic a:</h4>
-              <button type = "button" id = "btnSignUp" class = "type create-count border width padding background-principal box-shadow" > Crear una Cuenta </button
+              <button type = "button" id = "btnSignUp" class = "type create-count border width padding background-principal box-shadow" > Crear una Cuenta </button>
             </div>
           </div>
         </div>
@@ -54,7 +54,7 @@ const objTemp = {
   <header class="registry headerfijo width">
      <div class="row" id="title">
         <div class="col-12 col-s-12 center title fredoka">
-          <img id ="menu" class = "left" src = "img/menu.png"></img>
+          <img id ="menu" class = "left" src = "img/menu.png" alt = "logo worldpet">
           <h1 class = "fredoka">WORLDPET</h1>
         </div>
     </div>
@@ -138,14 +138,14 @@ const objTemp = {
           <h4 class = "center">Accede a la mayor red social para amantes de mascotas con una cuenta gratuita</h4>
           <div class="col-s-12 col-12">
           <p id= "uncompletedError" class = "errors background-principal"></p>
-          <input type="text" id="nombres" class = "border width padding background-principal" placeholder = " Ingresa tus nombres"></input>
+          <input type="text" id="nombres" class = "border width padding background-principal" placeholder = " Ingresa tus nombres">
           <div class = "errors background-principal"></div>
           </div>
           <div class="col-s-12 col-12">
-          <input type="text" id="apellidos" class = "border width padding background-principal" placeholder = " Ingresa tus apellidos"></input>
+          <input type="text" id="apellidos" class = "border width padding background-principal" placeholder = " Ingresa tus apellidos">
           <div class = "errors background-principal"></div>
           </div>
-          <div "col-s-12 col-12"></div>
+          <div class="col-s-12 col-12"></div>
           <div class="col-s-12 col-12">
           <input id="emailSignUp" type = "email" class = "border width padding background-principal" placeholder=" Correo"/>
           <div id = "emailError" class = "errors background-principal"></div>

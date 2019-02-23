@@ -207,14 +207,14 @@ export const itemNote = (objNote) => {
     <div class="col-12 col-s-12 border-buttom null-padding-bottom">
       <div class="row">
         <div class="col-1 col-s-1 xscol-2">
-          <img src="./img/user.png"> </img>
+          <img src="./img/user.png" alt = "fotouser" />
         </div>
         <div class="col-10 col-s-10 xscol-8">
           <p class="null-margin-top post-name-user">${objNote.uid}</p>
           <p class="null-margin-top post-name-date"> ${newDate} </p>
         </div>
         <div class="col-1 col-s-1 xscol-1">
-          <img id ="typeimage"> </img>
+          <img id ="typeimage" src = ".img/" alt = "type" /> 
         </div>
       </div>
     </div>
@@ -234,20 +234,35 @@ export const itemNote = (objNote) => {
       <div class="row">
         <div class="col-12 col-s-12 ">
           <div class="col-4 col-s-4 xscol-4 ">
-            <button type = "button" id = "btnLike-${objNote.id}"  class="btn-like background-principal box-shadow"><p class="font-like">Like 
-            </p></button> <span class="post-total-like registry">${objNote.likes}</span>
+            <button type = "button" id = "btnLike-${objNote.id}"  class="btn-like background-principal box-shadow font-like">Like 
+            </button> <span class="post-total-like registry">${objNote.likes}</span>
           </div>
-          <div class="col-4 col-s-4 xscol-2">
+          <div class="col-2 col-s-2 xscol-2">
           </div>
-          <div class="col-2 col-s-2 xscol-3">
+          <div class="col-2 col-s-2 xscol-2">
+          <button type = "button" id = "btnComment-${objNote.id}" class="login width btn-post box-shadow">Comentar</button>
+          </div>
+          <div class="col-2 col-s-2 xscol-2">
             <button type = "button" id = "btnUpdate-${objNote.id}" class="login width btn-post box-shadow"><i class="far fa-edit"></i></button>
           </div>
-          <div class="col-2 col-s-2 xscol-3">
+          <div class="col-2 col-s-2 xscol-2">
             <button type = "button" id = "btnDelete-${objNote.id}"  class="registry width btn-post box-shadow"><i class="far fa-trash-alt"></i></button>
           </div>
         </div>
       </div>
     </div> 
+    <div id = "template-comment" class="col-12 col-s-12" style="padding-bottom: 0% ; padding-top: 0%">
+      <div class="row">
+        <div class="col-11 col-s-11 xscol-11">
+          <textarea class="textarea-style-div width" id="my-comment"></textarea>
+        </div>
+        <div class="col-1 col-s-1 xscol-1">
+          <button type = "button" id = "btn-show-comment"  class="registry width btn-post box-shadow"><i class="fas fa-caret-right"></i></button>
+        </div>
+      </div>
+    </div>
+    <div id = "show-comment" class="col-12 col-s-12" style="padding-bottom: 0% ; padding-top: 0%">
+    </div>
   </div>
   <div id="myModaldos" class="modal width">
     <!-- Modal content -->
@@ -305,5 +320,25 @@ export const itemNote = (objNote) => {
     number = number + 1 ;
     newAddLike(objNote.id, number);
   });
+  const btnCommentPost = liElement.querySelector(`#btnComment-${objNote.id}`);
+  const templateComment = liElement.querySelector('#template-comment');
+  templateComment.style.display = 'none';
+  btnCommentPost.addEventListener('click', () => {
+    templateComment.style.display = 'block';
+  });
+  const btnshowComment = liElement.querySelector('#btn-show-comment');
+  btnshowComment.addEventListener('click', () => {
+    const itemComment = (comment) => {
+      const liElement = document.createElement('div');
+      liElement.innerHTML = `<div class = row> ${comment}</div>`;
+      return liElement;
+    };
+    let textComment = liElement.querySelector('#my-comment');
+    const myComment = textComment.value;
+    textComment.innerHTML = '';
+    const divElement = document.querySelector('#show-comment');
+    divElement.appendChild(itemComment(myComment));
+    return divElement; 
+  }); 
   return liElement;
 };

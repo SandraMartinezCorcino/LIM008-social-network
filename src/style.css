@@ -350,13 +350,12 @@ textarea{
   }
   .font-like{
     font-size: 14px;
-    float: left;
     margin-top: 6px;
     margin-right: 5px;
-    color: rgb(250, 63, 6);;
+    color: rgb(250, 63, 6);
   }
   .btn-like{
-      border: 1px solid rgb(250, 63, 6);;
+      border: 1px solid rgb(250, 63, 6);
       margin-left: 3px;
       height: 30px;
   }
